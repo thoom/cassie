@@ -3,8 +3,8 @@
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = '2'
-PRIVATE_NETWORK_IP = '192.168.77.102'
-VM_NAME = 'cassandra'
+PRIVATE_NETWORK_IP = ENV['CASSIE_VAGRANT_PRIVATE_NETWORK_IP'] || '192.168.77.102'
+VM_NAME = ENV['CASSIE_VAGRANT_VM_NAME'] || 'cassandra'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb, override|
