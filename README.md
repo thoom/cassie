@@ -9,11 +9,14 @@ A simple Vagrant script to create a Centos6.6 Cassandra VM
 4. Enjoy!
 
 ## Options
-To override the 2 real configurations, just add an environment variable:
+To override the default configurations, just add an environment variable:
 
-`CASSIE_VAGRANT_PRIVATE_NETWORK_IP`: This is the IP address that Cassandra will bind itself to.
+### CASSIE_VAGRANT_PRIVATE_NETWORK_IP
+This is the IP address that Cassandra will bind itself to.
 Defaults to `192.168.77.102`.
 
-'''You will need to reprovision your VM if after changing the IP address"
+*You will need to reprovision your VM if after changing the IP address*
 
-`CASSIE_VAGRANT_VM_NAME`: The VM name. Defaults to `cassie`.
+### CASSIE_VAGRANT_VM_NAME
+The VM name. 
+Defaults to `cassie`.
