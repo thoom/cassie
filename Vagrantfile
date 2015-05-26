@@ -57,5 +57,7 @@ fi
 echo "Updating Cassandra configuration to use IP: #{ PRIVATE_NETWORK_IP } ..."
 sed -i -- 's/\\(listen_address\\|rpc_address\\):\\(.*\\)/\\1: #{ PRIVATE_NETWORK_IP }/g' /etc/cassandra/conf/cassandra.yaml
 sed -i -- 's/seeds:\\(.*\\)/seeds: "#{ PRIVATE_NETWORK_IP }"/g' /etc/cassandra/conf/cassandra.yaml
+chkconfig --add cassandra
+service cassandra start
 SCRIPT
 end
