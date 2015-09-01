@@ -8,7 +8,7 @@ VM_NAME = ENV['CASSIE_VAGRANT_VM_NAME'] || 'cassandra'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb, override|
-    override.vm.box = 'chef/centos-6.6'
+    override.vm.box = 'bitmotive/CentOS-6.6-64bit-BASE'
 
     vb.name = VM_NAME
     vb.customize ["modifyvm", :id, "--memory", "4096"]
