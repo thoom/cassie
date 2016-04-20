@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :private_network, ip: PRIVATE_NETWORK_IP
   config.vm.provision :shell, inline: <<-SCRIPT
+yum install -y wget
 if [ ! -f jre-7u79-linux-x64.rpm ]; then
   echo "Downloading Java 7 ..."
   wget --no-cookies --no-check-certificate -nv --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jre-7u79-linux-x64.rpm"
@@ -61,3 +62,4 @@ chkconfig --add cassandra
 service cassandra start
 SCRIPT
 end
+
